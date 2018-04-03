@@ -1,0 +1,65 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">	
+    <title>Future Value Application</title>
+    <script>
+		var futureValue;
+                var more ="n";
+                var invarr= [];
+                var ratearr =[];
+                var yeararr =[];
+                var futarr = [];
+                var k=0;      
+		do{
+		// get user entries
+                do{ 
+		var investment = prompt("Enter investment amount as xxxxx.xx", 10000);
+		investment = parseFloat(investment);
+                }while( isNaN(investment));
+                invarr[k] = investment;
+                do{ 
+		var rate = prompt("Enter interest rate as xx.x", 7.5);
+		rate = parseFloat(rate);
+                }while((rate <=0)|| (rate >14));
+                ratearr[k] = rate;
+		var years = prompt("Enter number of years", 10);
+		years = parseInt(years);
+                yeararr[k] =years; 
+	        document.write("Investment amount = " + invarr[k]);
+	        document.write(" Interest rate = " + ratearr[k]);
+	        document.write(" Years = " + yeararr[k]);
+                    
+		// calulate future value
+		futureValue = investment;
+		for (var i = 1; i <= years; i++ ) {
+			futureValue = futureValue + (futureValue * rate / 100);
+                        var temp = (futureValue * rate /100);
+                        document.write(" Years = " +i);
+                        document.write("Interest=" + temp);
+                        document.write("Value ="  + futureValue);
+		}
+		futureValue = parseInt(futureValue);
+                futarr[k]=futureValue;
+                k++; 
+                more =prompt("Would you like another entry?","y");
+                }while(more != "y"); 	
+    </script>
+</head>
+<body>
+    <main>
+    	<script>        /** 
+                        for(var j=0; j<=k;j++){
+			document.write("Investment amount = " + invarr[j]);
+			document.write(" Interest rate = " + ratearr[j]);
+			document.write(" Years = " + yeararr[j]);
+			document.write(" Future Value is " + futarr[j] + "<br><br>");
+                       }**/
+        </script>
+        Thanks for using the Future Value application.
+    </main>
+</body>
+</html>
